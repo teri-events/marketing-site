@@ -1,0 +1,57 @@
+{{ $copy := index .Site.Data .Language.Lang }}
+<main class="bg-background text-foreground">
+<header class="fixed top-0 inset-x-0 z-50 transition-[background-color,box-shadow,border-color] duration-500 bg-transparent border-b border-transparent">
+<nav class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 h-[68px]">
+<a href="{{ .Site.Home.RelPermalink }}" class="inline-flex items-center leading-none"><img src="{{ "brand/logo/teri-wordmark-emerald.svg" | relURL }}" alt="teri" width="56" height="25" class="h-auto w-14"/>
+</a>
+<ul class="hidden md:flex items-center gap-8 font-body text-[13.5px] font-medium text-foreground/70">
+<li>
+<a href="#how" class="relative py-2 transition-colors hover:text-emerald after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:scale-x-100">{{ index $copy "nav" "how" }}</a>
+</li>
+<li>
+<a href="#features" class="relative py-2 transition-colors hover:text-emerald after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:scale-x-100">{{ index $copy "nav" "features" }}</a>
+</li>
+<li>
+<a href="#pricing" class="relative py-2 transition-colors hover:text-emerald after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:scale-x-100">{{ index $copy "nav" "pricing" }}</a>
+</li>
+<li>
+<a href="#faq" class="relative py-2 transition-colors hover:text-emerald after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:scale-x-100">{{ index $copy "nav" "faq" }}</a>
+</li>
+</ul>
+<div class="flex items-center gap-1 sm:gap-3">
+<details class="relative language-switcher">
+<summary class="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-md px-2 font-body text-sm text-foreground/70" aria-label="{{ $copy.nav.language }}">{{ .Language.LanguageName }} ▾</summary>
+<ul class="menu-in absolute right-0 top-full z-50 mt-1 min-w-[10rem] rounded-md border border-border bg-popover p-1 font-body text-popover-foreground shadow-md">
+{{ range .Sites }}<li><a class="block rounded-sm px-2 py-1.5 text-sm hover:bg-accent" href="{{ .Home.RelPermalink }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>{{ end }}
+</ul>
+</details>
+<a href="#signup" class="group inline-flex h-10 items-center gap-1.5 rounded-full bg-emerald pl-4 pr-3 font-body text-[13px] font-semibold text-primary-foreground shadow-[0_8px_20px_-10px_hsl(var(--emerald)/0.6)] transition-all hover:bg-emerald-deep hover:shadow-[0_10px_24px_-10px_hsl(var(--emerald)/0.7)] sm:gap-2 sm:pl-5 sm:pr-4">{{ index $copy "nav" "getStarted" }}<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+<button type="button" data-open-label="{{ $copy.nav.menu }}" data-close-label="{{ $copy.nav.closeMenu }}" aria-label="{{ $copy.nav.menu }}" aria-expanded="false" aria-controls="site-menu" class="-mr-1 grid h-10 w-10 place-items-center rounded-full text-foreground/80 transition-colors hover:text-emerald md:hidden">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true">
+<line x1="4" x2="20" y1="12" y2="12">
+</line>
+<line x1="4" x2="20" y1="6" y2="6">
+</line>
+<line x1="4" x2="20" y1="18" y2="18">
+</line>
+</svg>
+</button>
+</div>
+</nav>
+<div id="site-menu" hidden class="menu-in border-t border-border/70 bg-background/95 backdrop-blur-xl md:hidden">
+<ul class="mx-auto max-w-7xl px-4 py-2 font-body text-[15px] font-medium text-foreground/80 sm:px-6">
+{{ range slice "how" "features" "pricing" "faq" }}
+<li><a href="#{{ . }}" class="flex items-center justify-between rounded-lg px-2 py-3 hover:bg-cream hover:text-emerald">{{ index $copy.nav . }}</a></li>
+{{ end }}
+</ul>
+</div>
+<noscript><nav class="flex flex-wrap justify-center gap-4 bg-background px-4 py-2 text-sm md:hidden" aria-label="{{ $copy.nav.menu }}">
+{{ range slice "how" "features" "pricing" "faq" }}<a href="#{{ . }}">{{ index $copy.nav . }}</a>{{ end }}
+</nav></noscript>
+</header>

@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "title": "teri — Wedding Invites, Crafted with Care",
+    "description": "Designer wedding website templates with elegant typography, RSVPs, galleries and your own domain. Choose a template, make it yours, share with grace."
+  },
+  "nav": {
+    "getStarted": "Get started",
+    "how": "How it works",
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "language": "Language",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "english": "English",
+    "amharic": "አማርኛ"
+  },
+  "hero": {
+    "title1": "Build your wedding",
+    "title2": "invitation in",
+    "titleScript": "3 minutes.",
+    "titleSuffix": "",
+    "helper": "Reserve your personal web address — this is the link you'll share with guests to view your invitation and RSVP.",
+    "linkAria": "Your wedding link",
+    "claim": "Claim",
+    "reserved": "Reserved teri.com.et/{slug}",
+    "heroAlt": "Wedding website, invitation, and RSVP preview",
+    "card": {
+      "title": "RSVPs so far",
+      "attending": "attending",
+      "awaiting": "awaiting"
+    }
+  },
+  "features": {
+    "heading": "Every detail,",
+    "headingScript": "considered",
+    "list": [
+      {
+        "title": "Your own address",
+        "body": "Claim a personal link — yourname.teri.com.et — or bring your own domain."
+      },
+      {
+        "title": "Beautiful RSVPs",
+        "body": "Collect responses, dietary notes, and song requests in one elegant inbox."
+      },
+      {
+        "title": "Shared galleries",
+        "body": "Guests upload photos to a private gallery you keep forever."
+      },
+      {
+        "title": "Your story, told well",
+        "body": "Timeline, vows, and dedications — written in typography that respects them."
+      },
+      {
+        "title": "Live the day",
+        "body": "Live updates on the day itself — schedule changes, weather, transport."
+      },
+      {
+        "title": "Effortless edits",
+        "body": "Change anything in seconds. Designed to feel like a calm, considered ritual."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Things couples often",
+    "headingScript": "ask",
+    "aside": "Still wondering about something? Start with a template — it's free, and you can change your mind at any point.",
+    "asideCta": "Get started",
+    "items": [
+      {
+        "q": "How long does it take to build my wedding website?",
+        "a": "Pick a template, add your wedding details and photos, then share your link. It only takes a few minutes."
+      },
+      {
+        "q": "Will guests need an account to RSVP?",
+        "a": "No. Guests open your link and let you know if they’re coming."
+      },
+      {
+        "q": "Can we change the design after publishing?",
+        "a": "Yes. You can update the design, photos and details anytime. Your link stays the same."
+      },
+      {
+        "q": "Is there a limit to the number of guests?",
+        "a": "The paid plan has no guest limit. The free plan is for trying things out and expires after one day."
+      },
+      {
+        "q": "What happens to our website after the wedding?",
+        "a": "Your site stays online, so you can revisit your photos and memories after the wedding."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready when",
+    "headingScript": "you are.",
+    "subtitle": "Try Teri. Pick a template and start making it yours.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "button": "Get started",
+    "toastTitle": "Welcome to Teri.",
+    "toastBody": "Your invitation to begin is on its way."
+  },
+  "footer": {
+    "tagline": "Wedding Invites, designed with the same care as the day itself.",
+    "product": "Product",
+    "rights": "All rights reserved."
+  },
+  "visuals": {
+    "coupleCaps": "NATAN & BETI",
+    "couple": "Natan & Beti",
+    "or": "or",
+    "siteNav": [
+      "Home",
+      "Our Story",
+      "Travel",
+      "RSVP"
+    ],
+    "addressDate": "May 15, 2027 · Addis Ababa",
+    "pillLink": "Your own link",
+    "rsvpInbox": "RSVP inbox",
+    "attending": "attending",
+    "awaiting": "12 awaiting",
+    "attendingN": "Attending · {n}",
+    "regrets": "Regrets",
+    "guestNotes": [
+      "Vegetarian",
+      "Nut allergy",
+      "Sending love from Toronto"
+    ],
+    "songs": [
+      "Tizita",
+      "Ere Mela Mela"
+    ],
+    "pillRsvp": "Collect RSVPs",
+    "gallery": "GALLERY",
+    "galleryMeta": "148 photos · 32 guests",
+    "keptPre": "Kept ",
+    "keptBold": "forever",
+    "keptPost": "",
+    "pillPhotos": "12 new photos",
+    "storyTitle": "Our story",
+    "milestones": [
+      "First coffee at Tomoca",
+      "He asked, on Entoto",
+      "Forever begins"
+    ],
+    "vow": "“I choose you — today, and every day after.”",
+    "pillVows": "Our vows",
+    "liveToday": "Live today",
+    "liveDate": "· May 15",
+    "updates": [
+      {
+        "title": "Ceremony now at 3:30 PM",
+        "meta": "Updated 2 min ago"
+      },
+      {
+        "title": "Addis Ababa · 22° and sunny",
+        "meta": "Light jacket after 7"
+      },
+      {
+        "title": "Shuttle leaves Sheraton 2:45",
+        "meta": "Gate B · 40 seats"
+      }
+    ],
+    "pillLive": "Sent to 142 guests",
+    "gettingMarried": "are getting married",
+    "editDate": "Saturday · 15 May 2027",
+    "savedLive": "Saved & live"
+  },
+  "how": {
+    "heading": "From template to invitation in",
+    "headingScript": "three steps.",
+    "steps": [
+      {
+        "title": "Pick a template",
+        "body": "Choose a design that feels like you. Every template is bilingual and made for phones first."
+      },
+      {
+        "title": "Add your details",
+        "body": "Names, date, venue, your story. Change anything, any time — even after you've shared it."
+      },
+      {
+        "title": "Share one link",
+        "body": "Send it on Telegram, WhatsApp or SMS. Guests RSVP in seconds and you see every reply."
+      }
+    ],
+    "cta": "Start your invitation"
+  },
+  "notFound": {
+    "message": "Oops! Page not found",
+    "home": "Return to Home"
+  }
+}

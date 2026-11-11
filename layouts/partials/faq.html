@@ -1,0 +1,111 @@
+{{ $copy := index .Site.Data .Language.Lang }}
+<section id="faq" class="relative overflow-hidden px-5 py-16 sm:px-6 sm:py-24 lg:py-28">
+<div class="mx-auto grid max-w-7xl gap-10 sm:gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+<div class="self-start lg:sticky lg:top-28">
+<div class="">
+<h2 class="font-display text-4xl sm:text-5xl lg:text-[56px] leading-[1.05] text-foreground" data-reveal="{&quot;from&quot;:{&quot;y&quot;:22},&quot;fade&quot;:true,&quot;duration&quot;:0.8,&quot;delay&quot;:0}">{{ index $copy "faq" "heading" }} <span class="font-script text-gold text-[1.3em] leading-[0.9]">{{ index $copy "faq" "headingScript" }}</span>
+</h2>
+</div>
+<img src="{{ "brand/assets/botanicals/botanical-sprig.png" | relURL }}" alt="" aria-hidden="true" class="pointer-events-none mt-10 hidden w-16 opacity-50 lg:block"/>
+</div>
+<div data-reveal="{&quot;from&quot;:{&quot;y&quot;:22},&quot;fade&quot;:true,&quot;duration&quot;:0.8,&quot;delay&quot;:0.1}">
+<div class="w-full divide-y divide-gold/25 border-y border-gold/25">
+<div>
+<h3 class="flex">
+<button type="button" aria-expanded="true" aria-controls="faq-0" class="flex flex-1 items-center justify-between gap-4 py-5 text-left font-display text-lg font-medium text-foreground transition-colors hover:text-emerald sm:gap-6 sm:py-6 md:text-[21px]">
+<span class="flex items-baseline gap-3 sm:gap-5">
+<span class="w-7 shrink-0 font-script text-2xl leading-none text-gold sm:w-8 md:text-3xl">01</span>
+<span>{{ index $copy "faq" "items" 0 "q" }}</span>
+</span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-gold transition-transform duration-200 rotate-180" aria-hidden="true">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+</h3>
+<div id="faq-0" role="region" aria-hidden="false" class="grid transition-[grid-template-rows] duration-200 ease-out" style="grid-template-rows:1fr">
+<div class="overflow-hidden">
+<div class="pb-6 pl-10 pr-2 font-body text-[15px] leading-relaxed text-muted-foreground sm:pb-7 sm:pl-[3.25rem] sm:pr-6">{{ index $copy "faq" "items" 0 "a" }}</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="flex">
+<button type="button" aria-expanded="true" aria-controls="faq-1" class="flex flex-1 items-center justify-between gap-4 py-5 text-left font-display text-lg font-medium text-foreground transition-colors hover:text-emerald sm:gap-6 sm:py-6 md:text-[21px]">
+<span class="flex items-baseline gap-3 sm:gap-5">
+<span class="w-7 shrink-0 font-script text-2xl leading-none text-gold sm:w-8 md:text-3xl">02</span>
+<span>{{ index $copy "faq" "items" 1 "q" }}</span>
+</span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-gold transition-transform duration-200" aria-hidden="true">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+</h3>
+<div id="faq-1" role="region" aria-hidden="true" class="grid transition-[grid-template-rows] duration-200 ease-out" style="grid-template-rows:1fr">
+<div class="overflow-hidden">
+<div class="pb-6 pl-10 pr-2 font-body text-[15px] leading-relaxed text-muted-foreground sm:pb-7 sm:pl-[3.25rem] sm:pr-6">{{ index $copy "faq" "items" 1 "a" }}</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="flex">
+<button type="button" aria-expanded="true" aria-controls="faq-2" class="flex flex-1 items-center justify-between gap-4 py-5 text-left font-display text-lg font-medium text-foreground transition-colors hover:text-emerald sm:gap-6 sm:py-6 md:text-[21px]">
+<span class="flex items-baseline gap-3 sm:gap-5">
+<span class="w-7 shrink-0 font-script text-2xl leading-none text-gold sm:w-8 md:text-3xl">03</span>
+<span>{{ index $copy "faq" "items" 2 "q" }}</span>
+</span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-gold transition-transform duration-200" aria-hidden="true">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+</h3>
+<div id="faq-2" role="region" aria-hidden="true" class="grid transition-[grid-template-rows] duration-200 ease-out" style="grid-template-rows:1fr">
+<div class="overflow-hidden">
+<div class="pb-6 pl-10 pr-2 font-body text-[15px] leading-relaxed text-muted-foreground sm:pb-7 sm:pl-[3.25rem] sm:pr-6">{{ index $copy "faq" "items" 2 "a" }}</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="flex">
+<button type="button" aria-expanded="true" aria-controls="faq-3" class="flex flex-1 items-center justify-between gap-4 py-5 text-left font-display text-lg font-medium text-foreground transition-colors hover:text-emerald sm:gap-6 sm:py-6 md:text-[21px]">
+<span class="flex items-baseline gap-3 sm:gap-5">
+<span class="w-7 shrink-0 font-script text-2xl leading-none text-gold sm:w-8 md:text-3xl">04</span>
+<span>{{ index $copy "faq" "items" 3 "q" }}</span>
+</span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-gold transition-transform duration-200" aria-hidden="true">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+</h3>
+<div id="faq-3" role="region" aria-hidden="true" class="grid transition-[grid-template-rows] duration-200 ease-out" style="grid-template-rows:1fr">
+<div class="overflow-hidden">
+<div class="pb-6 pl-10 pr-2 font-body text-[15px] leading-relaxed text-muted-foreground sm:pb-7 sm:pl-[3.25rem] sm:pr-6">{{ index $copy "faq" "items" 3 "a" }}</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="flex">
+<button type="button" aria-expanded="true" aria-controls="faq-4" class="flex flex-1 items-center justify-between gap-4 py-5 text-left font-display text-lg font-medium text-foreground transition-colors hover:text-emerald sm:gap-6 sm:py-6 md:text-[21px]">
+<span class="flex items-baseline gap-3 sm:gap-5">
+<span class="w-7 shrink-0 font-script text-2xl leading-none text-gold sm:w-8 md:text-3xl">05</span>
+<span>{{ index $copy "faq" "items" 4 "q" }}</span>
+</span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-gold transition-transform duration-200" aria-hidden="true">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+</h3>
+<div id="faq-4" role="region" aria-hidden="true" class="grid transition-[grid-template-rows] duration-200 ease-out" style="grid-template-rows:1fr">
+<div class="overflow-hidden">
+<div class="pb-6 pl-10 pr-2 font-body text-[15px] leading-relaxed text-muted-foreground sm:pb-7 sm:pl-[3.25rem] sm:pr-6">{{ index $copy "faq" "items" 4 "a" }}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

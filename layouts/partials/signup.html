@@ -1,0 +1,19 @@
+{{ $copy := index .Site.Data .Language.Lang }}
+<section id="signup" class="relative overflow-hidden bg-cream px-5 py-16 sm:px-6 sm:py-24 lg:py-28">
+<img src="{{ "brand/assets/botanicals/botanical-corner.png" | relURL }}" alt="" aria-hidden="true" loading="lazy" class="pointer-events-none absolute w-[30vw] max-w-[360px] opacity-70 tint-gold -top-12 -left-12"/>
+<img src="{{ "brand/assets/botanicals/botanical-corner.png" | relURL }}" alt="" aria-hidden="true" loading="lazy" class="pointer-events-none absolute w-[30vw] max-w-[360px] opacity-70 tint-gold -bottom-12 -right-12 rotate-180"/>
+<div class="relative mx-auto max-w-5xl overflow-hidden rounded-[1.5rem] bg-emerald px-5 py-12 text-primary-foreground shadow-elegant sm:rounded-[2rem] sm:px-12 sm:py-16 lg:px-20 lg:py-20" data-reveal="{&quot;from&quot;:{&quot;y&quot;:22},&quot;fade&quot;:true,&quot;duration&quot;:0.8,&quot;delay&quot;:0}">
+<div aria-hidden="true" class="glow-gold pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full">
+</div>
+<div aria-hidden="true" class="pointer-events-none absolute -right-16 top-1/2 hidden aspect-square w-[300px] -translate-y-1/2 -scale-x-100 bg-gold/55 md:block" style="-webkit-mask-image:url({{ "brand/assets/botanicals/botanical-frame.png" | relURL }});mask-image:url({{ "brand/assets/botanicals/botanical-frame.png" | relURL }});mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center">
+</div>
+<div aria-hidden="true" class="pointer-events-none absolute -left-16 top-1/2 hidden aspect-square w-[300px] -translate-y-1/2 bg-gold/55 md:block" style="-webkit-mask-image:url({{ "brand/assets/botanicals/botanical-frame.png" | relURL }});mask-image:url({{ "brand/assets/botanicals/botanical-frame.png" | relURL }});mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center">
+</div>
+<div class="relative mx-auto max-w-2xl text-center">
+<h2 class="font-display text-4xl leading-[1.05] sm:text-5xl lg:text-[56px]">{{ index $copy "cta" "heading" }} <span class="font-script text-gold-soft text-[1.3em] leading-[0.9]">{{ index $copy "cta" "headingScript" }}</span>
+</h2>
+<p class="mx-auto mt-5 max-w-lg font-body text-[16px] leading-relaxed text-primary-foreground/75">{{ index $copy "cta" "subtitle" }}</p>
+<button data-signup data-title="{{ $copy.cta.toastTitle }}" data-description="{{ $copy.cta.toastBody }}" type="button" class="mx-auto mt-9 inline-flex h-12 items-center justify-center rounded-full bg-primary-foreground px-7 font-body text-sm font-semibold text-emerald transition-all hover:-translate-y-0.5 hover:bg-white">{{ index $copy "nav" "getStarted" }}</button>
+</div>
+</div>
+</section>

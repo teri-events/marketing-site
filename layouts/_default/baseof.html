@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ .Language.Lang }}">
+<head>
+{{ $copy := index .Site.Data .Language.Lang }}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fdfcfa">
+<title>{{ $copy.meta.title }}</title>
+<meta name="description" content="{{ $copy.meta.description }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">{{ end }}
+<link rel="icon" href="{{ "brand/logo/favicon/favicon.ico" | relURL }}">
+<link rel="icon" href="{{ "brand/logo/favicon/teri-favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ "brand/logo/favicon/teri-favicon-192.png" | relURL }}">
+<meta property="og:title" content="{{ $copy.meta.title }}">
+<meta property="og:description" content="{{ $copy.meta.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ "brand/assets/marketing/hero-wedding-website.png" | absURL }}">
+<meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Italianno&family=Noto+Sans+Ethiopic:wght@400;500;600;700&family=Noto+Serif+Ethiopic:wght@400;500;600&display=swap" rel="stylesheet" />
+
+
+<link rel="stylesheet" href="{{ "brand/tokens/tokens.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+<script src="{{ "js/site.js" | relURL }}" defer></script>
+</head>
+<body>
+{{ block "main" . }}{{ end }}
+</body>
+</html>

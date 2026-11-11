@@ -1,0 +1,13 @@
+{
+  "name": "teri-marketing-hugo",
+  "private": true,
+  "scripts": {
+    "css": "tailwindcss -c tailwind.config.ts -i assets/css/main.css -o static/css/site.css --minify",
+    "css:watch": "tailwindcss -c tailwind.config.ts -i assets/css/main.css -o static/css/site.css --watch",
+    "dev": "hugo server --bind 127.0.0.1",
+    "build": "npm run css && hugo --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  }
+}

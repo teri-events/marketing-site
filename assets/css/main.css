@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shared colors, typography, shadows, and motion come from
+   brand/tokens/tokens.css, mounted by Hugo and linked before this stylesheet. */
+:root {
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+}
+@font-face {
+  font-family: "Righteous";
+  src: url("../brand/fonts/Righteous-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-feature-settings: "liga", "kern", "dlig";
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Anchored sections clear the fixed nav when jumped to. */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  ::selection {
+    background: hsl(var(--gold-soft) / 0.45);
+    color: hsl(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--gold));
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .font-script { font-family: var(--font-script); font-weight: 400; }
+  .font-display { font-family: var(--font-display); }
+  .font-serif { font-family: var(--font-serif); }
+  .font-body { font-family: var(--font-body); }
+  .text-gold { color: hsl(var(--gold)); }
+  .text-gold-deep { color: hsl(var(--gold-deep)); }
+  .bg-gold { background-color: hsl(var(--gold)); }
+  .border-gold { border-color: hsl(var(--gold)); }
+  .text-emerald { color: hsl(var(--emerald)); }
+  .bg-emerald { background-color: hsl(var(--emerald)); }
+  .bg-emerald-deep { background-color: hsl(var(--emerald-deep)); }
+  .bg-cream { background-color: hsl(var(--cream)); }
+  .border-emerald { border-color: hsl(var(--emerald)); }
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-ivory { background: var(--gradient-ivory); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-lift { box-shadow: var(--shadow-lift); }
+  .tracking-luxe { letter-spacing: 0.35em; }
+  .tracking-wider-luxe { letter-spacing: 0.5em; }
+
+  /* Small gold label above headings */
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: hsl(var(--gold-deep));
+  }
+  .eyebrow-light {
+    color: hsl(var(--gold-soft));
+  }
+
+  /* Hairline divider with center ornament */
+  .gold-rule {
+    background: linear-gradient(to right, transparent, hsl(var(--gold) / 0.6), transparent);
+    height: 1px;
+  }
+
+  /* Soft radial wash used behind hero artwork and CTA cards */
+  .glow-cream {
+    background: radial-gradient(60% 60% at 50% 45%, hsl(var(--cream)) 0%, hsl(var(--cream) / 0.6) 45%, transparent 75%);
+  }
+  .glow-gold {
+    background: radial-gradient(50% 50% at 50% 50%, hsl(var(--gold) / 0.28) 0%, transparent 70%);
+  }
+
+  /* Botanical PNGs are drawn in a pale gold; this pushes them to the brand gold. */
+  .tint-gold {
+    filter: sepia(1) saturate(3) hue-rotate(-10deg) brightness(0.95);
+  }
+}
+
+/* Amharic: Ethiopic script has no case or italics, needs looser line height,
+   and reads poorly with wide letter-spacing. The oversized script-accent sizes
+   are tuned for Italianno, so bring accent words back in line with the heading. */
+:lang(am) .tracking-luxe,
+:lang(am) .tracking-wider-luxe,
+:lang(am) .eyebrow {
+  letter-spacing: 0.06em;
+}
+:lang(am) h1,
+:lang(am) h2,
+:lang(am) h3 {
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+:lang(am) :is(h1, h2, h3) .font-script {
+  font-size: 1em;
+  line-height: inherit;
+}
+:lang(am) .font-script,
+:lang(am) .italic {
+  font-style: normal;
+}
+/* Ethiopic glyphs are dense; tiny uppercase-style labels need a readable floor.
+   Mockups inside aria-hidden stages are fixed-size canvases, so leave them alone. */
+:lang(am) :is(.text-\[9px\], .text-\[10px\], .text-\[11px\]):not([aria-hidden] *) {
+  font-size: 12px;
+}
+
+/* Animations */
+@keyframes fade-rise {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes draw-in {
+  0% { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.5deg); }
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.35; }
+}
+
+.animate-fade-rise { animation: fade-rise 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-draw-in { animation: draw-in 1.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-float-soft { animation: float-soft 8s ease-in-out infinite; }
+.animate-pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
+
+@keyframes menu-in {
+  0% { opacity: 0; transform: translateY(-4px) scale(0.96); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes toast-in {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: none; }
+}
+.menu-in { animation: menu-in 0.15s ease-out both; }
+.toast-in { animation: toast-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-float-soft,
+  .animate-pulse-dot {
+    animation: none;
+  }
+}
+
+/* Fine paper grain over the whole page, desktop only so phones keep a cheap
+   scroll. Kept far below the threshold where it reads as texture. */
+@media (min-width: 768px) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Hugo interactions: native language links and progressively enhanced sections. */
+[hidden] { display: none !important; }
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
+header.is-solid {
+  background: hsl(var(--background) / .85);
+  backdrop-filter: blur(24px);
+  border-color: hsl(var(--border) / .7);
+  box-shadow: 0 1px 0 hsl(var(--gold) / .08);
+}
+.faq-enhanced [aria-expanded="true"] svg { transform: rotate(180deg); }
+.faq-enhanced [aria-expanded="false"] svg { transform: rotate(0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.footer-content {
+  display: grid;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid hsl(var(--gold) / .2);
+}
+.footer-tagline { max-width: 22rem; margin-top: 1rem; }
+.footer-product-links { display: grid; gap: .75rem; margin-top: 1rem; }
+@media (min-width: 640px) {
+  .footer-content { grid-template-columns: 2fr 1fr; gap: 3rem; }
+}
+
+/* Keep configured pricing plans in one desktop row and prices on one line. */
+.pricing-grid { max-width: 72rem; grid-template-columns: minmax(0, 1fr); }
+.pricing-card { min-width: 0; container-type: inline-size; }
+.pricing-price { display: block; white-space: nowrap; font-size: clamp(1.5rem, 12cqi, 3rem); }
+@media (min-width: 768px) {
+  .pricing-grid { grid-template-columns: repeat(var(--pricing-columns), minmax(0, 1fr)); }
+  .pricing-card { padding-inline: clamp(1rem, 2.5vw, 2.5rem); }
+}
