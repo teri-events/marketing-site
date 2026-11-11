@@ -1,4 +1,4 @@
-baseURL = 'https://teri.com.et/'
+baseURL = 'https://teri.et/'
 title = 'teri'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
@@ -15,24 +15,24 @@ languageCode = 'am'
 languageName = 'አማርኛ'
 weight = 2
 
-# Canonical shared assets: keep brand/ beside marketing-hugo/ when building.
+# Canonical brand assets are included in this repository.
 [module]
   [[module.mounts]]
   source = 'static'
   target = 'static'
   [[module.mounts]]
-  source = '../brand/assets'
+  source = 'brand/assets'
   target = 'static/brand/assets'
   excludeFiles = ['**/*.md']
   [[module.mounts]]
-  source = '../brand/logo'
+  source = 'brand/logo'
   target = 'static/brand/logo'
   includeFiles = ['*.svg', 'favicon/**']
   [[module.mounts]]
-  source = '../brand/fonts'
+  source = 'brand/fonts'
   target = 'static/brand/fonts'
   includeFiles = ['*.ttf', '*.woff', '*.woff2']
   [[module.mounts]]
-  source = '../brand/tokens'
+  source = 'brand/tokens'
   target = 'static/brand/tokens'
   includeFiles = ['*.css']

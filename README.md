@@ -7,7 +7,7 @@ A Hugo version of the existing React marketing site, retaining its emerald and g
 Install Hugo **0.139.4 or newer**, then:
 
 ```sh
-cd marketing-hugo
+cd marketing-site
 hugo server
 ```
 
@@ -25,7 +25,7 @@ Deploy `public/` to any static host. Set your production URL when building:
 hugo --minify --baseURL https://example.com/
 ```
 
-The compiled CSS is committed, so ordinary Hugo builds do not need npm or the original `marketing-site/` directory. Keep the sibling `../brand/` directory in the checkout: Hugo mounts its images, logos, favicons, fonts, and tokens directly under `/brand/`. Deploy only the resulting `public/` output. Configure your host to serve `404.html` for missing URLs rather than rewriting every URL to the homepage.
+The compiled CSS is committed, so ordinary Hugo builds do not need npm. The `brand/` directory is included in this repository: Hugo mounts its images, logos, favicons, fonts, and tokens directly under `/brand/`. Deploy only the resulting `public/` output. Configure your host to serve `404.html` for missing URLs rather than rewriting every URL to the homepage.
 
 ## Edit
 
@@ -33,10 +33,10 @@ The compiled CSS is committed, so ordinary Hugo builds do not need npm or the or
 - `content/sections/pricing.en.md`, `content/sections/pricing.am.md`: pricing headings and plans.
 - `layouts/partials/`: shared sections and illustrated feature previews. Repeated cards are explicit markup; update their indexes if adding or removing data entries.
 - `layouts/_default/baseof.html`: metadata, fonts, and page shell.
-- `../brand/assets/`: canonical hero images, botanical ornaments, and gallery photos.
-- `../brand/logo/`: outlined wordmark and favicon variants.
-- `../brand/fonts/`: local Righteous wordmark face.
-- `../brand/tokens/tokens.css`: shared design tokens, loaded directly without copying.
+- `brand/assets/`: canonical hero images, botanical ornaments, and gallery photos.
+- `brand/logo/`: outlined wordmark and favicon variants.
+- `brand/fonts/`: local Righteous wordmark face.
+- `brand/tokens/tokens.css`: shared design tokens, loaded directly without copying.
 - `static/js/site.js`: menu, FAQ, language links, animations, and CTA feedback.
 - `assets/css/main.css`, `tailwind.config.ts`: styles and design tokens.
 
@@ -49,7 +49,7 @@ npm run css
 npm run css:watch
 ```
 
-`npm run build` regenerates CSS and builds Hugo. The typography follows `../brand/fonts/README.md`; text faces use its Google Fonts embed and Righteous is served from the brand font directory. Language links preserve the current section; legacy `?lang=en` and `?lang=am` links are supported. Language URLs determine page content, including with JavaScript disabled.
+`npm run build` regenerates CSS and builds Hugo. The typography follows `brand/fonts/README.md`; text faces use its Google Fonts embed and Righteous is served from the brand font directory. Language links preserve the current section; legacy `?lang=en` and `?lang=am` links are supported. Language URLs determine page content, including with JavaScript disabled.
 
 The final Get started button retains the source site's informational toast. It does not submit a signup or create an account. Application functionality remains in the existing Next.js app.
 
@@ -63,3 +63,16 @@ Edit `content/sections/pricing.en.md` for English and `content/sections/pricing.
 
 These files configure the homepage only; Hugo does not publish separate pricing pages. The existing subtitle setting is available but is not displayed by the current design. Changes appear automatically with `hugo server`.
 # marketing-site
+
+## GitHub Pages
+
+Push this entire `marketing-site/` repository, including `brand/`. In repository Settings → Pages, select GitHub Actions as the source. The existing workflow builds from the repository root and publishes `public/`, using `https://teri.et/` as the base URL. No sibling checkout is required.
+
+### Custom domain: teri.et
+
+1. In GitHub repository Settings → Pages, set Custom domain to `teri.et` and save.
+2. At the domain's DNS provider, create four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`.
+3. Optionally point `www` via CNAME to your GitHub account's `<username>.github.io` hostname, without the repository path.
+4. Once GitHub's DNS check and certificate provisioning finish, enable Enforce HTTPS.
+
+This repository deploys through GitHub Actions; GitHub requires the custom domain in Pages settings and does not use a source `CNAME` file for this deployment method. DNS and repository settings must be configured separately from these local source changes.

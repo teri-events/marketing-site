@@ -19,14 +19,14 @@
 </div>
 <div class="footer-content">
 <div>
-<a href="https://teri.com.et/" class="logo text-2xl text-emerald">teri<span class="text-gold">.</span></a>
+<a href="https://teri.et/" class="logo text-2xl text-emerald">teri<span class="text-gold">.</span></a>
 <p class="footer-tagline font-body text-sm leading-relaxed text-muted-foreground">{{ $copy.footer.tagline }}</p>
 </div>
 <nav aria-label="{{ $copy.footer.product }}">
 <h2 class="font-body text-sm font-semibold text-foreground">{{ $copy.footer.product }}</h2>
 <ul class="footer-product-links font-body text-sm text-muted-foreground">
 {{ range slice "how" "features" "pricing" "faq" }}
-<li><a href="https://teri.com.et/#{{ . }}" class="transition-colors hover:text-emerald">{{ index $copy.nav . }}</a></li>
+<li><a href="https://teri.et/#{{ . }}" class="transition-colors hover:text-emerald">{{ index $copy.nav . }}</a></li>
 {{ end }}
 </ul>
 </nav>

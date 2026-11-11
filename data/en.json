@@ -23,7 +23,7 @@
     "helper": "Reserve your personal web address — this is the link you'll share with guests to view your invitation and RSVP.",
     "linkAria": "Your wedding link",
     "claim": "Claim",
-    "reserved": "Reserved teri.com.et/{slug}",
+    "reserved": "Reserved teri.et/{slug}",
     "heroAlt": "Wedding website, invitation, and RSVP preview",
     "card": {
       "title": "RSVPs so far",
@@ -37,7 +37,7 @@
     "list": [
       {
         "title": "Your own address",
-        "body": "Claim a personal link — yourname.teri.com.et — or bring your own domain."
+        "body": "Claim a personal link — yourname.teri.et — or bring your own domain."
       },
       {
         "title": "Beautiful RSVPs",
