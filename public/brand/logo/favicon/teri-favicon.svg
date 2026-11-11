@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="512" height="512" role="img" aria-label="teri">
+  <!-- teri favicon / app icon: the "t" from the wordmark with the gold full stop, emerald on cream. Corner radius follows the platform; this file uses 22%. -->
+  <rect width="1000" height="1000" rx="220" fill="#f9f2e7"/>
+  <g transform="translate(249.2 780.0) scale(0.3741)">
+    <path fill="#154735" transform="translate(-29.0 0)" d="M641 0Q542 0 455.0 -37.5Q368 -75 302.5 -140.5Q237 -206 199.5 -293.0Q162 -380 162 -479V-797H29V-1069H162V-1497H434V-1069H848V-797H434V-479Q434 -436 450.0 -398.5Q466 -361 494.0 -333.0Q522 -305 560.0 -288.5Q598 -272 641 -272H848V0Z"/>
+    <path fill="#c89741" transform="translate(900.6 0)" d="M440 -102Q440 -66 427.0 -34.5Q414 -3 391.0 20.0Q368 43 337.0 56.5Q306 70 270 70Q235 70 203.5 56.5Q172 43 148.5 20.0Q125 -3 111.5 -34.5Q98 -66 98 -102Q98 -137 111.5 -168.0Q125 -199 148.5 -222.0Q172 -245 203.5 -258.5Q235 -272 270 -272Q306 -272 337.0 -258.5Q368 -245 391.0 -222.0Q414 -199 427.0 -168.0Q440 -137 440 -102Z"/>
+  </g>
+</svg>

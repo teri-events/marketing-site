@@ -1,0 +1,117 @@
+/* teri brand tokens
+ * Source of truth for color, type, radius, shadow and motion.
+ * Copied verbatim into app/src/styles/tokens.css (and dark.css for the .dark
+ * block). If they drift, this file wins and the app should be updated to match.
+ *
+ * Colors are HSL triplets so they can take an alpha: hsl(var(--gold) / 0.6).
+ * Hex equivalents are listed for design tools; see tokens.json.
+ */
+
+:root {
+  /* ---- Surfaces ------------------------------------------------------- */
+  --background: 40 60% 99%;          /* paper     #fefdfb */
+  --card:       38 45% 97%;          /* card      #fbf8f4 */
+  --ivory:      38 55% 96%;          /* ivory     #faf6ef */
+  --cream:      38 60% 94%;          /* cream     #f9f2e7 */
+  --secondary:  38 55% 94%;          /* parchment #f8f2e7 */
+  --muted:      36 30% 95%;          /* muted bg  #f6f3ee */
+  --border:     36 25% 88%;          /* hairline  #e8e2d9 */
+  --input:      36 25% 88%;
+
+  /* ---- Ink ------------------------------------------------------------ */
+  --ink:               158 45% 14%;  /* #143428  body & headings */
+  --foreground:        158 45% 14%;
+  --muted-foreground:  158 10% 38%;  /* #576b63  captions, helper text */
+
+  /* ---- Emerald -------------------------------------------------------- */
+  --emerald:      158 55% 18%;       /* #154735  primary, wordmark, links */
+  --emerald-soft: 158 30% 35%;       /* #3e7460  secondary text, icons, success */
+  --emerald-deep: 158 55% 12%;       /* #0e2f23  hover, dark CTA sections */
+  --primary:            158 55% 18%;
+  --primary-foreground: 38 45% 97%;
+  --ring:               158 55% 18%;
+
+  /* ---- Gold ----------------------------------------------------------- */
+  --gold:      38 55% 52%;           /* #c89741  ornament, script accent 40px+ ; NOT for small text (2.6:1 on paper) */
+  --gold-soft: 38 60% 70%;           /* #e0bf85  gradient start, eyebrows on emerald, selection */
+  --gold-deep: 32 50% 38%;           /* #916430  gold TEXT on light grounds (5.1:1 on paper) */
+  --accent:            35 55% 58%;   /* #cf9e59 */
+  --accent-foreground: 158 45% 14%;
+
+  /* ---- Semantic ------------------------------------------------------- */
+  --destructive:            0 60% 45%;   /* #b82e2e  errors and delete only */
+  --destructive-foreground: 38 45% 97%;
+  --rose: 336 35% 66%;                   /* #c78aa0  third avatar dot only; never surface or text */
+
+  /* ---- Gradients & washes -------------------------------------------- */
+  --gradient-gold:  linear-gradient(135deg, hsl(38 65% 70%), hsl(35 45% 48%) 50%, hsl(32 50% 38%));
+  --gradient-ivory: linear-gradient(180deg, hsl(38 60% 96%), hsl(38 55% 92%));
+  --glow-cream: radial-gradient(60% 60% at 50% 45%, hsl(var(--cream)) 0%, hsl(var(--cream) / 0.6) 45%, transparent 75%);
+  --glow-gold:  radial-gradient(50% 50% at 50% 50%, hsl(var(--gold) / 0.28) 0%, transparent 70%);
+
+  /* ---- Shadows (always ink at low alpha, never grey) ------------------ */
+  --shadow-soft:    0 10px 40px -20px hsl(158 45% 14% / 0.12);
+  --shadow-card:    0 1px 2px hsl(158 45% 14% / 0.04), 0 12px 32px -16px hsl(158 45% 14% / 0.18);
+  --shadow-lift:    0 2px 4px hsl(158 45% 14% / 0.04), 0 28px 56px -24px hsl(158 45% 14% / 0.28);
+  --shadow-elegant: 0 30px 80px -40px hsl(158 45% 14% / 0.25);
+
+  /* ---- Radius --------------------------------------------------------- */
+  --radius: 0.75rem;                 /* 12px base; card 16px; actions are pills (999px) */
+
+  /* ---- Type ----------------------------------------------------------- */
+  /* Latin faces first; Ethiopic faces pick up Amharic glyphs per character. */
+  --font-display: "DM Serif Display", "Cormorant Garamond", "Noto Serif Ethiopic", serif;
+  --font-serif:   "Cormorant Garamond", "Noto Serif Ethiopic", serif;
+  --font-script:  "Italianno", "Cormorant Garamond", "Noto Serif Ethiopic", cursive;
+  --font-body:    "Inter", "Noto Sans Ethiopic", system-ui, sans-serif;
+  --font-logo:    "Righteous", sans-serif;   /* wordmark ONLY */
+
+  --tracking-eyebrow: 0.22em;        /* 0.06em under :lang(am) */
+  --tracking-luxe:    0.35em;
+  --tracking-wider-luxe: 0.5em;
+
+  /* ---- Motion --------------------------------------------------------- */
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-hover: 300ms;
+  --duration-enter: 800ms;
+  --duration-draw:  1600ms;
+  --duration-float: 8s;
+}
+
+/* Dark surfaces (product UI and guests' phones at night; marketing stays
+ * light): warm near-black ground, gold takes over as primary. Emerald moves
+ * to a lighter tone for links and success. Mirrored by app/src/styles/dark.css. */
+.dark {
+  --background: 30 22% 10%;          /* #1f1a14 */
+  --foreground: 38 35% 92%;          /* #f2ede3 */
+  --card:       30 18% 13%;
+  --popover:    30 18% 13%;
+  --popover-foreground: 38 35% 92%;
+  --ivory:      30 16% 15%;
+  --cream:      30 15% 17%;
+  --secondary:  30 15% 17%;
+  --muted:      30 12% 19%;
+  --border:     32 12% 24%;
+  --input:      32 12% 24%;
+  --ink:              38 35% 92%;
+  --muted-foreground: 36 18% 68%;
+  --primary:            38 60% 65%;  /* #dbb470, 8.9:1 on the ground */
+  --primary-foreground: 30 22% 10%;
+  --ring:               38 60% 65%;
+  --emerald:      158 30% 58%;       /* links, success, icons */
+  --emerald-soft: 158 28% 64%;
+  --emerald-deep: 158 30% 48%;
+  --gold:      38 60% 65%;
+  --gold-soft: 38 55% 76%;
+  --gold-deep: 38 60% 65%;           /* gold text is legible on the dark ground */
+  --accent:            38 30% 22%;
+  --accent-foreground: 38 35% 92%;
+  --destructive:            0 60% 62%;
+  --destructive-foreground: 30 22% 10%;
+  --gradient-ivory: linear-gradient(180deg, hsl(30 18% 13%), hsl(30 20% 11%));
+  --shadow-soft: 0 10px 40px -20px hsl(0 0% 0% / 0.5);
+  --shadow-card: 0 1px 2px hsl(0 0% 0% / 0.35), 0 12px 32px -16px hsl(0 0% 0% / 0.6);
+  --shadow-lift: 0 2px 4px hsl(0 0% 0% / 0.3), 0 28px 56px -24px hsl(0 0% 0% / 0.7);
+  color-scheme: dark;
+}
+.dark .tint-gold { filter: sepia(1) saturate(3) hue-rotate(-10deg) brightness(1.15); }
